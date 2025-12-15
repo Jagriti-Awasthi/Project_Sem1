@@ -1,70 +1,387 @@
-<html>
-    <head>
-        <title>project</title>
-        <style>
-             *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            .header{
-                height: 50px;
-                width:100%;
-                display:block;
-                background-color:rgb(159, 159, 82);
-                line-height: 50px;
-            }
-            nav{
-                height:45px;
-                width:100%;
-                background-color: rgb(106, 23, 78);
-                line-height: 45px;
-                display:block;
-            }
-            nav ul{
-                list-style:none;           
-            }
-            nav ul li{
-                display: inline-block;
-              float: left;
-              width:20%;
-              text-align: center;
-            }
-            nav ul li a{
-                font-size: 20px;
-                color:aquamarine;
-                display:inline-block;
-                padding:10px 10px;
-                border-right: 3px solid white;
-            }
-            nav ul li:last-child a{
-                border-right: none;
-            }
-            nav ul li a:hover{
-    background-color: rgba(255,255,255,0.2);
-    color: white;
-            }
-            .clear{
-                clear: both;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-                    <center><h1>ABES ENGINEERING COLLEGE, GHAZIABAD. </h1></center>  
-                    </div>
-        <nav>
-            <ul>
-                <li><a href="https://abes.ac.in/">Home</a></li>
-                <li><a href="https://abes.ac.in/courses-offered.html#adm-enquiry-description">Admission</a></li>
-                <li><a href="https://abes.ac.in/courses-offered.html#adm-enquiry-description">Course Curriculum</a></li>
-                <li><a href="https://abes.ac.in/placement.html">Placements</a></li>
-                <li><a href="https://abes.ac.in/institute-achievement.html">About</a></li>
-            </ul>
-            <div class="clear"></div>
-        </nav>  
-        <center><div class="main">
-      <img src="https://i.pinimg.com/originals/7e/54/b1/7e54b1128db86f7d78269810f34d2d1b.png" alt="page" height="100%" width="100%">
-    </div></center>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>project</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background: linear-gradient(135deg,#fceabb,#f8b500);
+}
+.utility-bar{
+    background:#0d1b2a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:6px 50px;
+    font-size:14px;
+}
+.top-header{
+    background: linear-gradient(to right,#1a2a6c,#b21f1f,#fdbb2d);
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:20px 50px;
+    border-bottom:5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.logo{
+    display:flex;
+    align-items:center;
+}
+.logo img{
+    width:70px;
+    margin-right:20px;
+    border-radius:10px;
+}
+.logo-text h1{
+    font-size:36px;
+    letter-spacing:2px;
+    color:#fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+.logo-text h3{
+    font-size:18px;
+    color:#ffeb3b;
+    margin-top:5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+nav{
+    background: linear-gradient(to right,#ff416c,#ff4b2b);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+}
+nav ul li{
+    flex:1;
+    position:relative;
+}
+nav ul li a{
+    display:block;
+    text-align:center;
+    padding:15px 0;
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:bold;
+    border-right:2px solid rgba(255,255,255,0.4);
+    transition:0.3s;
+}
+nav ul li:last-child a{
+    border-right:none;
+}
+nav ul li a:hover{
+    background: rgba(255,255,255,0.2);
+    color:#fff;
+    transform:scale(1.05);
+}
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#ff4b2b;
+    display:none;
+    width:200px;
+    z-index:10;
+}
+nav ul li:hover .dropdown{
+   display:block;
+}
+.dropdown li a{
+    border:none;
+    padding:12px;
+    text-align:left;
+}
+.marquee-bar{
+    background:#fff3cd;
+    color:#b71c1c;
+    font-weight:bold;
+    padding:10px 50px;
+}
+.banner img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-bottom:5px solid #fff;
+}
+.about{
+    width:85%;
+    margin:50px auto;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+.about h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#4a148c;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.about p{
+    font-size:17px;
+    line-height:1.8;
+    text-align:justify;
+    color:#333;
+}
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin:60px auto;
+}
+.card{
+    background: linear-gradient(135deg,#ffecd2,#ffb347);
+    width:300px;
+    padding:30px;
+    text-align:center;
+    border-radius:25px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.35);
+    transition:0.3s;
+}
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+.card img{
+    width:180px;
+    height:200px;
+    object-fit:cover;
+    margin-bottom:18px;
+    border-radius:15px;
+}
+.card h3{
+    margin-bottom:6px;
+    color:#6a1b9a;
+    font-size:20px;
+}
+.stats{
+    display:flex;
+    justify-content:space-around;
+    background:linear-gradient(135deg,#1a237e,#3949ab);
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+.stats div h2{font-size:32px;}
+.stats div p{margin-top:6px;font-size:18px;}
+.affiliation{
+    width:85%;
+    margin:50px auto;
+    background: linear-gradient(135deg,#11998e,#38ef7d);
+    color:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+.affiliation h2{
+    text-align:center;
+    margin-bottom:20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.affiliation ul{
+    font-size:16px;
+    line-height:1.8;
+    padding-left:25px;
+}
+.registration{
+    width:50%;
+    margin:60px auto 100px auto;
+    background: linear-gradient(135deg,#a1c4fd,#c2e9fb);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+.registration h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#0d47a1;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.2);
+}
+.registration table{
+    width:100%;
+}
+.registration input,
+.registration select{
+    width:100%;
+    padding:12px;
+    margin:5px 0 15px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+.registration button{
+    padding:15px 40px;
+    background: linear-gradient(to right,#8e2de2,#4a00e0);
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.registration button:hover{
+    transform: scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+footer{
+    background: linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+    padding:40px 50px;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    box-shadow:0 -5px 20px rgba(0,0,0,0.3);
+    font-size:16px;
+    line-height:1.8;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+footer div a{
+    color:#ffeb3b;
+    text-decoration:underline;
+}
+footer div h4{
+    margin-bottom:12px;
+}
+</style>
+</head>
+<body>
+<div class="utility-bar">
+  <span>📧 info@abes.ac.in</span>
+  <span>📞 0120‑7135112</span>
+  <span>🔍 Search</span>
+</div>
+<div class="top-header">
+    <div class="logo">
+        <img src="https://th.bing.com/th/id/OIP._mVfeIz_M5OghcDn9HD8RgAAAA?w=115&h=180" alt="ABES Logo">
+        <div class="logo-text">
+            <h1>ABES</h1>
+            <h3>Engineering College, Ghaziabad</h3>
+        </div>
+    </div>
+</div>
+<nav>
+<ul>
+    <li><a href="https://www.abes.ac.in/">Home</a></li>
+    <li><a href="https://www.abes.ac.in/about-us.html">About</a></li>
+    <li>
+        <a href="#">Academics ▾</a>
+        <ul class="dropdown">
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Examination</a></li>
+        </ul>
+    </li>
+    <li><a href="https://www.abes.ac.in/courses-offered.html">Courses / Admission</a></li>
+    <li><a href="https://www.abes.ac.in/placement.html">Placements</a></li>
+    <li><a href="https://www.abes.ac.in/contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="marquee-bar">
+<marquee behavior="scroll" direction="left">
+🔔 Admissions Open 2025 | AKTU Counselling Started | Placement Drive Updates
+</marquee>
+</div>
+<div class="banner">
+<img src="https://i.pinimg.com/originals/7e/54/b1/7e54b1128db86f7d78269810f34d2d1b.png" alt="College Banner">
+</div>
+<div class="about">
+<h2>About ABES Engineering College</h2>
+<p>
+ABES Engineering College, established in 2000, is a prominent private engineering institution in Ghaziabad, affiliated with Dr. APJ Abdul Kalam Technical University (AKTU), offering a wide range of undergraduate and postgraduate engineering programs.At ABES Engineering College, we ignite the flames of curiosity, knowledge, and innovation. Established over two decades ago under the esteemed Society for Educational Excellence, our institution has evolved into a dynamic center of learning nestled in the heart of Ghaziabad. Our unwavering commitment to excellence has garnered us noteworthy positions in the National Institute Ranking Framework (NIRF), a testament to our dedication to quality education.
+Beyond engineering, our academic spectrum encompasses a diverse range of programs, including M.Tech, MCA, and MBA courses, designed to cater to the multifaceted aspirations of our students. As we stride forward, our core values of integrity, excellence, and innovation remain at our foundation. ABES Engineering College is not just an institution; it's a journey of transformation, empowerment, and enlightenment. Join us on this extraordinary voyage, where potential finds its path, and dreams take flight.
+</p>
+</div>
+<div class="cards">
+    <div class="card">
+        <img src="https://cdn.theorg.com/6dde37e2-2dc7-400e-ab2d-9154d7626acb_medium.jpg" alt="Chairman">
+        <h3>Chairman</h3>
+        <p>Mr. Neeraj Goel</p>
+    </div>
+    <div class="card">
+        <img src="https://abes.ac.in/assets/about/Leadership-Team/Devendra%20Kumar%20sharma.jpg" alt="General Secretary">
+        <h3>General Secretary</h3>
+        <p>Dr. Devendra Kumar Sharma</p>
+    </div>
+</div>
+<div class="stats">
+  <div>🎓 <h2>18000+</h2><p>Alumni</p></div>
+  <div>🏢 <h2>500+</h2><p>Recruiters</p></div>
+  <div>💼 <h2>95%</h2><p>Placement</p></div>
+</div>
+<div class="affiliation">
+<h2>Affiliations, Approvals, Accreditation & Ranking</h2>
+<ul>
+<li>Affiliated to Dr. APJ Abdul Kalam Technical University (AKTU)</li>
+<li>Approved by AICTE</li>
+<li>NBA Accredited Programs</li>
+<li>NAAC Accredited Institution</li>
+<li>Top-ranked Engineering College in UP</li>
+</ul>
+</div>
+<div class="registration">
+<h2>Student Registration Form</h2>
+<form>
+<table cellpadding="10">
+<tr>
+<td>Name *</td>
+<td><input type="text" placeholder="Enter your name" required></td>
+</tr>
+<tr>
+<td>Email *</td>
+<td><input type="email" placeholder="Enter your email" required></td>
+</tr>
+<tr>
+<td>Mobile *</td>
+<td><input type="tel" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required></td>
+</tr>
+<tr>
+<td>Course *</td>
+<td>
+<select required>
+<option value="">Select Course</option>
+<option>B.Tech</option>
+<option>M.Tech</option>
+<option>MBA</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<button type="submit">Register</button>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<footer>
+<div>
+<h4>Quick Links</h4>
+<a href="https://www.abes.ac.in/">Home</a><br>
+<a href="https://www.abes.ac.in/about-us.html">About</a><br>
+<a href="https://www.abes.ac.in/courses-offered.html">Courses</a>
+</div>
+<div>
+<h4>Academics</h4>
+<a href="#">Departments</a><br>
+<a href="#">Faculty</a><br>
+<a href="#">Examination</a>
+</div>
+<div>
+<h4>Contact</h4>
+ABES Engineering College, Ghaziabad<br>
+Hapur Bypass Hwy (NH-24), Near Amrit Steel Company, Chipiyana Buzurg, Ghaziabad, UP 201009<br>
+Phone: <a href="tel:01207135112">0120 713 5112</a><br>
+<a href="https://www.abes.ac.in/">Official Website</a>
+</div>
+</footer>
+</body>
 </html>
